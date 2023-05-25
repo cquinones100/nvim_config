@@ -1,2 +1,2 @@
 require("carlos.remap")
-print("Hello")
+require("carlos.init")
