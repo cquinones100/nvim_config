@@ -18,13 +18,8 @@ _G.toggleTerminal = function()
   local terminalBufNr = vim.fn.bufnr('terminal')
 
   if buftype == 'terminal' then
-    -- hide the terminal in a tab to avoid killing it
-
-    -- move the terminal into a new tab
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>T', true, true, true), 'n', true)
-
-    -- go to the last visited tab
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('g<tab>', true, true, true), 'n', true)
+    -- go to the last visited pane
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>p', true, true, true), 'n', true)
   else
     _G.has_toggled_terminal = true
 
