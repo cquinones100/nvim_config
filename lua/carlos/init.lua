@@ -17,6 +17,10 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.statusline = "%n"
 
+vim.opt.statusline = "%F:%l"
+
+vim.opt.clipboard = "unnamed"
+
 local nvim_lsp = require('lspconfig')
 local handlers = {
   ["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -30,8 +34,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 nvim_lsp.solargraph.setup {
   cmd = {
-    "bundle",
-    "exec",
     "solargraph",
     "stdio"
   },
