@@ -43,3 +43,4 @@ vim.keymap.set("n", "<C-t>", ":lua toggleTerminal()<CR>")
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 
 vim.keymap.set('n', '<leader>y', ":!echo -n % | pbcopy<CR><CR>")
+vim.keymap.set('n', 'gh', ":lua vim.diagnostic.open_float()<CR>")
