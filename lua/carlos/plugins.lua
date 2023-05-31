@@ -27,4 +27,6 @@ return require('packer').startup(function(use)
 	use('tpope/vim-fugitive')
 
   use('neovim/nvim-lspconfig')
+
+  use('github/copilot')
 end)
