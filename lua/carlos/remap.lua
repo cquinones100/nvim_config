@@ -14,7 +14,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<S-y>", "yy")
 
 _G.toggleTerminal = function()
-  local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+ local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
   local terminalBufNr = vim.fn.bufnr('terminal')
 
   if buftype == 'terminal' then
@@ -40,7 +40,6 @@ end
 -- toggle terminal
 vim.keymap.set("n", "<C-t>", ":lua toggleTerminal()<CR>")
 
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-
 vim.keymap.set('n', '<leader>y', ":!echo -n % | pbcopy<CR><CR>")
 vim.keymap.set('n', 'gh', ":lua vim.diagnostic.open_float()<CR>")
+
