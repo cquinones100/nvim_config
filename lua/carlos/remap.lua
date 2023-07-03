@@ -13,33 +13,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- yank whole line shift+y
 vim.keymap.set("n", "<S-y>", "yy")
 
-_G.toggleTerminal = function()
- local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
-  local terminalBufNr = vim.fn.bufnr('terminal')
-
-  if buftype == 'terminal' then
-    -- go to the last visited pane
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>p', true, true, true), 'n', true)
-  else
-    _G.has_toggled_terminal = true
-
-    -- create a split pane below
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>s', true, true, true), 'n', true)
-
-    -- move to the new pane
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>j', true, true, true), 'n', true)
-
-    -- open the terminal
-    vim.api.nvim_feedkeys(':te', 'n', false)
-
-    -- carriage return the previous command
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, true, true), 'n', true)
-  end
-end
-
 -- toggle terminal
-vim.keymap.set("n", "<C-t>", ":lua toggleTerminal()<CR>")
-vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
 vim.keymap.set('n', '<leader>y', ":!echo -n % | pbcopy<CR><CR>")
 vim.keymap.set('n', 'gh', ":lua vim.diagnostic.open_float()<CR>")
 
