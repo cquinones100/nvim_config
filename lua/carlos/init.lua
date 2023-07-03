@@ -34,6 +34,8 @@ local handlers = {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local on_attach = function(client, bufnr)
+  client.server_capabilities.document_formatting = true
+
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
   
@@ -65,7 +67,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "solargraph", "tsserver" }
+local servers = { "solargraph", "tsserver", "eslint" }
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -120,3 +122,13 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- local null_ls = require("null-ls")
+
+-- null_ls.setup({
+--   sources = {
+--     null_ls.builtins.formatting.stylua,
+--     null_ls.builtins.diagnostics.eslint,
+--     null_ls.builtins.completion.spell,
+--   },
+-- })
