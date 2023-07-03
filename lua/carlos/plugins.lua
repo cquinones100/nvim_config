@@ -34,4 +34,27 @@ return require('packer').startup(function(use)
 
 	use('tpope/vim-commentary')
 
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+    suggestion = {
+      auto_trigger = true,
+      enabled = false,
+    },
+    panel = {
+      enabled = false,
+    },
+  }
+
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  }
 end)
