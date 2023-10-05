@@ -25,6 +25,28 @@ require("lazy").setup({
   {'hrsh7th/nvim-cmp'},
   {'L3MON4D3/LuaSnip'},
   { 'rose-pine/neovim', name = 'rose-pine' },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+    suggestion = {
+      auto_trigger = true,
+      enabled = false,
+    },
+    panel = {
+      enabled = false,
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  }
 })
 
 print("loaded lazy")

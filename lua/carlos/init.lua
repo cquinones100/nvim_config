@@ -37,13 +37,6 @@ require('mason-lspconfig').setup({
         }
       }
     end,
-    -- ['tsserver'] = function ()
-    --   local lspconfig = require("lspconfig")
-
-    --   lspconfig.tsserver.setup {
-    --     filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" }
-    --   }
-    -- end
   },
 })
 
@@ -56,6 +49,7 @@ lsp_zero.set_sign_icons({
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local luasnip = require('luasnip')
 
 cmp.setup({
   window = {
@@ -63,11 +57,32 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ['<S-tab>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<tab>'] = cmp.mapping.select_next_item(cmp_select),
+    -- ['<S-tab>'] = cmp.mapping.select_prev_item(cmp_select),
+    -- ['<tab>'] = cmp.mapping.select_next_item(cmp_select),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
-  })
+    ["<C-Space>"] = cmp.mapping.complete(),['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = 'copilot' },
+    { name = 'nvim_lsp' }
+  }
 })
 
 lsp_zero.on_attach(function(client, bufnr)
