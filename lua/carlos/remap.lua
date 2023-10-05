@@ -30,4 +30,9 @@ vim.keymap.set("n", "<c-t>", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<c-n>", function() ui.nav_file(3) end)
 
 --undotree remap
-vim.keymap.set("n", "<leader>u", :UndotreeToggle<CR>>)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- replace currently hovered word
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

@@ -1,5 +1,6 @@
 require("carlos.lazy")
 require("carlos.remap")
+vim.cmd('colorscheme rose-pine')
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "ruby", "javascript", "typescript" },
@@ -24,3 +25,51 @@ require'nvim-treesitter.configs'.setup {
 
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 16
+vim.opt.incsearch = true
+vim.opt.scrolloff = 8
+vim.opt.nu = true
+vim.opt.updatetime = 50
+
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+vim.opt.statusline = "%n"
+
+vim.opt.statusline = "%F:%l"
+
+vim.opt.clipboard = "unnamed"
+
+vim.opt.termguicolors = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+-- lsp configuration
+
+local lsp_zero = require("lsp-zero")
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  -- Replace the language servers listed here 
+  -- with the ones you want to install
+  ensure_installed = {'tsserver', 'rust_analyzer', "eslint", "sumneko_lua", "ruby" },
+
+  handlers = {
+    lsp_zero.default_setup,
+  },
+})
+
+lsp_zero.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
+
+
