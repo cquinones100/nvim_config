@@ -1,2 +1,1 @@
-require("carlos.remap")
-require("carlos.init")
+require("carlos")
