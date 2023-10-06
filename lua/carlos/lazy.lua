@@ -46,7 +46,8 @@ require("lazy").setup({
     config = function ()
       require("copilot_cmp").setup()
     end
-  }
+  },
+  {'j-morano/buffer_manager.nvim'},
 })
 
 print("loaded lazy")
