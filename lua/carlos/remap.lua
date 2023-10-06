@@ -36,3 +36,5 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- replace currently hovered word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set("n", "gh", function() vim.diagnostic.open_float({scope="line"}) end)

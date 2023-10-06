@@ -29,14 +29,6 @@ require('mason-lspconfig').setup({
         }
       }
     end,
-    ['solargraph'] = function ()
-      local lspconfig = require("lspconfig")
-
-      lspconfig.solargraph.setup {
-        settings = {
-        }
-      }
-    end,
   },
 })
 
@@ -47,8 +39,12 @@ lsp_zero.set_sign_icons({
   info = '»'
 })
 
+vim.diagnostic.config({
+  virtual_text = false,
+  underline = true,
+})
+
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local luasnip = require('luasnip')
 
 cmp.setup({
@@ -122,9 +118,6 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
