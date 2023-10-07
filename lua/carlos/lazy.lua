@@ -48,6 +48,6 @@ require("lazy").setup({
     end
   },
   {'j-morano/buffer_manager.nvim'},
+  {'feline-nvim/feline.nvim'},
 })
 
-print("loaded lazy")
