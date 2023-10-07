@@ -49,5 +49,7 @@ require("lazy").setup({
   },
   {'j-morano/buffer_manager.nvim'},
   {'feline-nvim/feline.nvim'},
+  {'nvim-tree/nvim-tree.lua'},
+  {'nvim-tree/nvim-web-devicons'},
 })
 
