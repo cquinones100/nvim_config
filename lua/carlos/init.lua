@@ -3,7 +3,12 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("carlos.lazy")
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  git = {
+    enable = true,
+    ignore = false
+  },
+})
 require('nvim-web-devicons').setup()
 require("carlos.remap")
 
