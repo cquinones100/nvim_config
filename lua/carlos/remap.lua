@@ -41,3 +41,6 @@ vim.keymap.set("n", "gh", function() vim.diagnostic.open_float({scope="line"}) e
 
 -- copy file path to clipboard
 vim.keymap.set("n", "<S-c-c>", function() vim.fn.setreg("+", vim.fn.expand("%:p")) end)
+
+-- open terminal in horizontal split
+vim.keymap.set("n", "<c-t>", function() vim.cmd("sp | resize 10 | term") end)
