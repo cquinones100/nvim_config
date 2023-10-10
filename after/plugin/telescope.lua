@@ -4,7 +4,7 @@ vim.keymap.set('n', '<c-p>',
   function()
     builtin.find_files({
       hidden = true,
-      file_ignore_patterns = {'.git/*', 'node_modules/*'},
+      file_ignore_patterns = {'.git/*', 'node_modules/*', 'vendor/*'},
       no_ignore = true,
     })
   end
