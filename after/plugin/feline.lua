@@ -82,8 +82,8 @@ end
 
 --- get the cursor's line
 function get_line_cursor()
-  local cursor_line, _ = unpack(vim.api.nvim_win_get_cursor(0))
-  return cursor_line
+  local cursor_line, cursor_column = unpack(vim.api.nvim_win_get_cursor(0))
+  return tostring(cursor_line) .. ':' .. tostring(cursor_column)
 end
 
 --- get the file's total number of lines
