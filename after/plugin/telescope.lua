@@ -10,7 +10,11 @@ vim.keymap.set('n', '<c-p>',
   end
 )
 
+require("telescope").load_extension("dir")
+
 vim.keymap.set('n', '<S-c-f>', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
+vim.keymap.set("n", "<S-c-f>d", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>pd", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
