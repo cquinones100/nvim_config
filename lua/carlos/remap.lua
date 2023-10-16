@@ -37,8 +37,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- replace currently hovered word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "gh", function() vim.diagnostic.open_float({scope="line"}) end)
-
 -- copy file path to clipboard
 vim.keymap.set("n", "<S-c-c>", function() vim.fn.setreg("+", vim.fn.expand("%:p")) end)
 

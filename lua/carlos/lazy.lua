@@ -74,6 +74,12 @@ require("lazy").setup({
     }
   },
   {
+    "/jose-elias-alvarez/null-ls.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    }
+  },
+  {
     "princejoogie/dir-telescope.nvim",
     -- telescope.nvim is a required dependency
     dependencies = {"nvim-telescope/telescope.nvim"},
