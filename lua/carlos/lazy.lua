@@ -60,6 +60,10 @@ require("lazy").setup({
           keymaps = {
             close = "<Esc>",
           },
+        },
+
+        openai_params = {
+          model = "gpt-3.5-turbo-16k",
         }
       })
     end,
