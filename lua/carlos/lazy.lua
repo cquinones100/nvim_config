@@ -91,6 +91,7 @@ require("lazy").setup({
         show_preview = true,
       })
     end,
-  }
+  },
+  { "tpope/vim-commentary" },
 })
 
