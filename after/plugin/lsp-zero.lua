@@ -111,9 +111,9 @@ end)
 
 local null_opts = lsp_zero.build_options('null-ls', {
   on_attach = function(client)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ name = 'null-ls' })")
-    end
+    -- if client.server_capabilities.documentFormattingProvider then
+    --   vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ name = 'null-ls' })")
+    -- end
   end,
 })
 
