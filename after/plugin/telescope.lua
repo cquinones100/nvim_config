@@ -35,3 +35,7 @@ vim.api.nvim_create_user_command("GitStash", ":Telescope git_stash", {
 vim.api.nvim_create_user_command("GitBranch", ":Telescope git_branches", {
   desc = "Run Git Branch using Telescope"
 })
+
+vim.api.nvim_create_user_command("CommandHistory", ":Telescope command_history", {
+  desc = "Get command history using Telescope"
+})
