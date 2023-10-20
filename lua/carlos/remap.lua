@@ -42,3 +42,5 @@ vim.keymap.set("n", "<S-c-c>", function() vim.fn.setreg("+", vim.fn.expand("%:p"
 
 -- open terminal in horizontal split
 vim.keymap.set("n", "<c-t>", function() vim.cmd("sp | resize 10 | term") end)
+
+vim.keymap.set("n", "<C-s>", vim.cmd.w)
