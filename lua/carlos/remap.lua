@@ -25,9 +25,6 @@ end)
 
 vim.keymap.set("n", "<leader>a", mark.add_file)
 vim.keymap.set("n", "<c-e>", ui.toggle_quick_menu)
-vim.keymap.set("n", "<c-h>", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<c-t>", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<c-n>", function() ui.nav_file(3) end)
 
 --undotree remap
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
