@@ -23,3 +23,7 @@ end
 vim.api.nvim_create_user_command("GitLogCurrentFile", GitLogCurrentFile, {
   desc = "Git Checkout Current File to Main's Version"
 })
+
+vim.api.nvim_create_user_command("GitForcePush", "Git push origin head -f", {
+  desc = "Git force push"
+})
