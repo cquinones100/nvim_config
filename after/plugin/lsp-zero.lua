@@ -82,7 +82,8 @@ cmp.setup({
   }),
   sources = {
     { name = 'copilot' },
-    { name = 'nvim_lsp' }
+    { name = 'nvim_lsp' },
+    { name = 'sonicpi' }
   }
 })
 

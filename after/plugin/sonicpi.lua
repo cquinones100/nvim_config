@@ -5,6 +5,8 @@ local CurrentFile = function ()
 end
 
 local RunCurrentFile = function ()
+  vim.cmd.w()
+
   vim.cmd("!sonic-pi-tool.py run-file " .. CurrentFile())
 end
 

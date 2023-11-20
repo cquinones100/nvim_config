@@ -34,7 +34,7 @@ require("lazy").setup({
     end,
     suggestion = {
       auto_trigger = true,
-      enabled = false,
+      enabled = true,
     },
     panel = {
       enabled = false,
