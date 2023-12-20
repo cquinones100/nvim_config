@@ -19,6 +19,7 @@ require('mason-lspconfig').setup({
     "texlab",
     "clangd",
     "prettierd",
+    "html-lsp",
   },
 
   handlers = {
