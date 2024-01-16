@@ -12,8 +12,6 @@ require('mason-lspconfig').setup({
     "rust_analyzer",
     "eslint",
     "lua_ls",
-    "solargraph",
-    "rubocop",
     "ruby_ls",
     "sorbet",
     "texlab",

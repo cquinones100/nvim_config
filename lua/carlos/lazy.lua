@@ -14,8 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { 'nvim-telescope/telescope.nvim', tag = '0.1.3', dependencies = { 'nvim-lua/plenary.nvim' }},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-  {'ThePrimeagen/harpoon'},
-  {'mbbill/undotree'},
   {'tpope/vim-fugitive'},
   {"williamboman/mason.nvim"},
   {"williamboman/mason-lspconfig.nvim"},

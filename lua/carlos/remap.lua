@@ -12,22 +12,12 @@ vim.keymap.set("n", "<c-u>", "<C-u>zz")
 -- yank whole line shift+y
 vim.keymap.set("n", "<S-y>", "yy")
 
--- harpoon keybindings
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-
 --buffer_manager keybindings
 local buffer_manager = require('buffer_manager.ui')
 
 vim.keymap.set("n", "<c-b>", function ()
   buffer_manager.toggle_quick_menu()
 end)
-
-vim.keymap.set("n", "<leader>a", mark.add_file)
-vim.keymap.set("n", "<c-e>", ui.toggle_quick_menu)
-
---undotree remap
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
