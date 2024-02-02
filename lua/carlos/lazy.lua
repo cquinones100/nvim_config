@@ -50,28 +50,6 @@ require("lazy").setup({
   {'nvim-tree/nvim-tree.lua'},
   {'nvim-tree/nvim-web-devicons'},
   {
-  "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup({
-        chat = {
-          keymaps = {
-            close = "<Esc>",
-          },
-        },
-
-        openai_params = {
-          model = "gpt-3.5-turbo-16k",
-        }
-      })
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  },
-  {
     "/jose-elias-alvarez/null-ls.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
