@@ -16,8 +16,6 @@ require('mason-lspconfig').setup({
     "sorbet",
     "texlab",
     "clangd",
-    "prettierd",
-    "html-lsp",
     "solargraph",
   },
 
