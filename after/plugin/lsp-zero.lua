@@ -18,6 +18,7 @@ require('mason-lspconfig').setup({
     "clangd",
     "prettierd",
     "html-lsp",
+    "solargraph",
   },
 
   handlers = {
