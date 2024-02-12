@@ -11,6 +11,7 @@ require("nvim-tree").setup({
 })
 require('nvim-web-devicons').setup()
 require("carlos.remap")
+require("carlos.utils")
 
 vim.cmd('colorscheme rose-pine')
 
