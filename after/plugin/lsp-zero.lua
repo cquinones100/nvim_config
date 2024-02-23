@@ -126,3 +126,11 @@ null_ls.setup({
   }
 })
 
+function LspFix()
+  vim.cmd('LspStop')
+  vim.cmd('LspStart')
+end
+
+vim.api.nvim_create_user_command("LspFix", LspFix, {
+  desc = "Completely Restart the LspServer"
+})
