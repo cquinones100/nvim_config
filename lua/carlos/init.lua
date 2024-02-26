@@ -56,3 +56,33 @@ vim.opt.incsearch = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+local CloseAllButCurrentBuffer = function()
+  vim.cmd(":bufdo! bdelete | bnext")
+end
+
+vim.api.nvim_create_user_command("CloseAllButCurrentBuffer", CloseAllButCurrentBuffer, {
+  desc = "Close all buffers except the current one"
+})
+
+local SorbetToQuickFix = function(arg)
+  local filter  = arg.args
+
+  print("the filter: " .. filter)
+
+  vim.cmd("! bundle exec srb tc 2>&1 | grep -E \"\\.rb:\" awk -F: '{print $1\":\"$2\":1: \"$3}' | sed -e 's/^[ \t]*//' > ~/.config/nvim/quickfix.txt")
+
+  print("the filter length: " .. string.len(filter))
+
+  if string.len(filter) > 0 then
+    vim.cmd("! cat ~/.config/nvim/quickfix.txt | grep " .. filter .. " > ~/.config/nvim/quickfix.txt")
+  end
+
+  vim.cmd(":cfile ~/.config/nvim/quickfix.txt")
+  vim.cmd(":copen")
+end
+
+vim.api.nvim_create_user_command("SorbetToQuickFix", SorbetToQuickFix, {
+  desc = "Run Sorbet and send errors to quickfix",
+  nargs = "*"
+})
