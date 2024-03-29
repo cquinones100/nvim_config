@@ -37,6 +37,12 @@ require('mason-lspconfig').setup({
   },
 })
 
+vim.filetype.add({
+  extension = {
+    rbi = 'ruby',
+  },
+})
+
 lsp_zero.set_sign_icons({
   error = '✘',
   warn = '▲',
